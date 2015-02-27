@@ -52,6 +52,8 @@ function update() {
 }
 
 range.addEventListener('mousemove', update);
+range.addEventListener('keyup', update);
+range.addEventListener('keypress', update);
 range.addEventListener('change', update);
 reset.addEventListener('click', resetSlider);
 update();
