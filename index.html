@@ -11,11 +11,15 @@ img { position: absolute; }
 <h2>Opinionated Dress Color Simulation</h2>
 <p>by <a href="http://grack.com">Matt Mastracci</a> (<a href="https://github.com/mmastrac/dress-simulator">fork me on GitHub!</a>)</a></p>
 
-Right <input type="range" id="range"> Wrong
+<p>Slide the control from side-to-side to fade between the three images: a "blue" version where we subtract out the 
+theoretical color of the light, the original picture, and a "gold" version where the blue had been significantly 
+reduced.</p>
+
+Right <input type="range" id="range" min="0" max="100" value="50"> Wrong
 
 <div class="container">
-<img id="a" src="a.png">
-<img id="b" src="b.png">
+<img id="a" src="a.jpg">
+<img id="b" src="b.jpg">
 <img id="c" src="c.jpg">
 </div>
 
