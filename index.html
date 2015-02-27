@@ -12,16 +12,16 @@ input { vertical-align: middle; }
 <h2>Opinionated Dress Color Simulation</h2>
 <p>by <a href="http://grack.com">Matt Mastracci</a> (<a href="https://github.com/mmastrac/dress-simulator">fork me on GitHub!</a>)</a></p>
 
-<p>Slide the control from side-to-side to fade between the three images: a "blue" version where we subtract out the 
-theoretical color of the light (#524922), the original picture, and a "gold" version where we add color to compensate 
+<p>Slide the control from side-to-side to fade between the three images: a "blue/black" version where we subtract out the 
+theoretical color of the light (#524922), the original picture, and a "white/gold" version where we add color to compensate 
 for the perceived shadow (#392c00).</p>
 
-Right <input type="range" id="range" min="0" max="100" value="50"> Wrong <button id="reset">Reset</button>
+Blue/Black <input type="range" id="range" min="0" max="100" value="50"> White/Gold <button id="reset">Reset</button>
 
 <div class="container">
-<img id="a" src="a.jpg">
-<img id="b" src="b.jpg">
-<img id="c" src="c.jpg">
+<img id="a" src="a.jpg?1">
+<img id="b" src="b.jpg?1">
+<img id="c" src="c.jpg?1">
 </div>
 
 <script>
