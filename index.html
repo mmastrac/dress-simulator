@@ -36,18 +36,20 @@ function resetSlider() {
   update();
 }
 
+function ease(x) {
+  return x;
+}
+
 function update() {
   var val = +range.value;
   console.log(val);
   if (val < 50) {
-    a.style.opacity = 1 - (val / 50);
-    b.style.opacity = (val / 50);
+    b.style.opacity = ease((val / 50));
     c.style.opacity = 0;
   }
   if (val >= 50) {
-    a.style.opacity = 0
-    b.style.opacity = 1 - ((val - 50) / 50);
-    c.style.opacity = ((val - 50) / 50);
+    b.style.opacity = 1;
+    c.style.opacity = ease(((val - 50) / 50));
   }
 }
 
