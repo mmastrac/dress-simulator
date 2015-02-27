@@ -6,6 +6,7 @@
 * { font-family: sans; }
 div.container { position: relative; }
 img { position: absolute; }
+input { vertical-align: middle; }
 </style>
 
 <h2>Opinionated Dress Color Simulation</h2>
@@ -15,7 +16,7 @@ img { position: absolute; }
 theoretical color of the light, the original picture, and a "gold" version where the blue had been significantly 
 reduced.</p>
 
-Right <input type="range" id="range" min="0" max="100" value="50"> Wrong
+Right <input type="range" id="range" min="0" max="100" value="50"> Wrong <button id="reset">Reset</button>
 
 <div class="container">
 <img id="a" src="a.jpg">
@@ -25,9 +26,15 @@ Right <input type="range" id="range" min="0" max="100" value="50"> Wrong
 
 <script>
 var range = document.getElementById('range');
+var reset = document.getElementById('reset');
 var a = document.getElementById('a');
 var b = document.getElementById('b');
 var c = document.getElementById('c');
+
+function resetSlider() {
+  range.value = "50";
+  update();
+}
 
 function update() {
   var val = +range.value;
@@ -46,6 +53,7 @@ function update() {
 
 range.addEventListener('mousemove', update);
 range.addEventListener('change', update);
+reset.addEventListener('click', resetSlider);
 update();
 </script>
 
