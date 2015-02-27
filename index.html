@@ -42,7 +42,6 @@ function ease(x) {
 
 function update() {
   var val = +range.value;
-  console.log(val);
   if (val < 50) {
     b.style.opacity = ease((val / 50));
     c.style.opacity = 0;
@@ -53,10 +52,14 @@ function update() {
   }
 }
 
+// Mousedown triggers before the range control is updated, so let's defer a browser tick. You'd think that change
+// would trigger here, but nope.
+range.addEventListener('mousedown', function() { setTimeout(update, 1); });
 range.addEventListener('mousemove', update);
 range.addEventListener('keyup', update);
 range.addEventListener('keypress', update);
 range.addEventListener('change', update);
+
 reset.addEventListener('click', resetSlider);
 update();
 </script>
