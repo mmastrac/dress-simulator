@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head><title>Opinionated Dress Color Simulation v1.6.3</title></head>
+<body>
+<style>
+* { font-family: "Comic Sans MS", cursive; }
+div.container { position: relative; }
+img { position: absolute; }
+</style>
+
+<h2>Opinionated dress simulation v1.6.3</h2>
+<p>by <a href="http://grack.com">Matt Mastracci</a></p>
+
+Right <input type="range" id="range"> Wrong
+
+<div class="container">
+<img id="a" src="https://i.imgur.com/qVJgX8Z.png">
+<img id="b" src="https://i.imgur.com/JxuvbUz.png">
+<img id="c" src="https://40.media.tumblr.com/3d94e0fca919dd88f30fce05d8751faa/tumblr_nkeng29h6G1qagplio1_500.jpg">
+</div>
+
+<script>
+var range = document.getElementById('range');
+var a = document.getElementById('a');
+var b = document.getElementById('b');
+var c = document.getElementById('c');
+
+function update() {
+  var val = +range.value;
+  console.log(val);
+  if (val < 50) {
+    a.style.opacity = 1 - (val / 50);
+    b.style.opacity = (val / 50);
+    c.style.opacity = 0;
+  }
+  if (val >= 50) {
+    a.style.opacity = 0
+    b.style.opacity = 1 - ((val - 50) / 50);
+    c.style.opacity = ((val - 50) / 50);
+  }
+}
+
+range.addEventListener('mousemove', update);
+range.addEventListener('change', update);
+update();
+</script>
+
